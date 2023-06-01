@@ -4,12 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <title>Laravel</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+
 
     <!-- Styles -->
     <style>
@@ -696,6 +698,10 @@
             z-index: 10
         }
 
+        .nav__logo{
+            width: 25%;
+        }
+
         @media (prefers-reduced-motion: no-preference) {
             .motion-safe\:hover\:scale-\[1\.01\]:hover {
                 --tw-scale-x: 1.01;
@@ -835,12 +841,12 @@
 
         @if (Route::has('login'))
         @auth
-        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-cyan-800">Dashboard</a>
+        <a href="{{ url('/dashboard') }}" class="bg-gray-600 text-white font-bold rounded-md transition-all transition-200 hover:text-gray-600 hover:bg-white px-3 py-2">Личный кабинет</a>
         @else
-        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-cyan-800">Log in</a>
+        <a href="{{ route('login') }}" class="bg-gray-600 text-white font-bold rounded-md transition-all transition-200 hover:text-gray-600 hover:bg-white px-3 py-2">Войти</a>
 
         @if (Route::has('register'))
-        <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 bg-indigo-400 p-2 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-cyan-800">Register</a>
+        <a href="{{ route('register') }}" class="bg-gray-600 text-white font-bold rounded-md transition-all transition-200 hover:text-gray-600 hover:bg-white px-3 py-2 ml-4">Регистрация</a>
         @endif
         @endauth
         @endif
